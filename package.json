@@ -1,0 +1,26 @@
+{
+  "name": "Public",
+  "version": "1.0.0",
+  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimici2016/alimici2016-weekend-jquery-server-calculator..git"
+  },
+  "bugs": {
+    "url": "https://github.com/alimici2016/alimici2016-weekend-jquery-server-calculator./issues"
+  },
+  "homepage": "https://github.com/alimici2016/alimici2016-weekend-jquery-server-calculator.#readme"
+}
