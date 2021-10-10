@@ -3,11 +3,23 @@ let operator = ''
 function ready() {
     $("#submit").on(`click`, sendInput)
     $("#plusBtn").on(`click`, plusBtn)
+    $("#minusBtn").on('click', minusBtn)
+    $("#multiplyBtn").on (`click`, multiplyBtn)
+    $("#divisionBtn").on(`click`, divisionBtn)
     // $("#clearBtn").on(`click`, clearInput)
 }
 
 function plusBtn() {
     operator = '+'
+}
+function minusBtn(){
+    operator = '-'
+}
+function multiplyBtn(){
+    operator = '*'
+}
+function divisionBtn(){
+    operator = '/'
 }
 
 function sendInput() {
@@ -25,10 +37,9 @@ function sendInput() {
         receivedInput();
         $("#num1Input").val('')
         $("#num2Input").val('')
-    })
-    // .catch(function() {
-    //     alert('post failed', response);
-    // })
+    }).catch(function() {
+        alert('post failed', response);
+     })
 }
 
 function receivedInput() {
@@ -37,8 +48,7 @@ function receivedInput() {
         url: '/calculation'
     }).then(function (response){
         console.log('success', response)
+        
     })
 }
-
-function 
 

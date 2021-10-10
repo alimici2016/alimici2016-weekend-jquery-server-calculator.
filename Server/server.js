@@ -11,11 +11,9 @@ app.listen(PORT, () => {
 
 let inputValues = []
 
-
 app.get('/calculation', (req, res) => {
     res.send(inputValues)
 });
-
 
 app.post('/calculation', (req, res) => {
     // console.log('this is an array', response)
@@ -25,17 +23,21 @@ app.post('/calculation', (req, res) => {
 });
 
 function total (response){
-    // if ( response.operator === '+'){
-    //     response.total = Number(response.num1) + Number(response.num2);
-    // };
-
-    switch (response.operator)
+    switch (response.operator){
     case '+':
-        
+        response.total = Number(response.num1) + Number(response.num2)
+        break;
+    case '-':
+        response.total = Number(response.num1) - response.num2
+        break;
+    case '*':
+        response.total = Number(response.num) * response.num2
+        break;
+    case '/':
+        response.total = Number(response.num1) / response.num2
+        break;
 
-    
-    
-    
+    }
     inputValues.push(response)
     console.log('calculator', response);
 }
