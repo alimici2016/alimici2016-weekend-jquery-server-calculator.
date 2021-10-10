@@ -28,13 +28,13 @@ function total (response){
         response.total = Number(response.num1) + Number(response.num2)
         break;
     case '-':
-        response.total = Number(response.num1) - response.num2
+        response.total = response.num1 - response.num2
         break;
     case '*':
-        response.total = (response.num) * response.num2
+        response.total = response.num1 * response.num2
         break;
     case '/':
-        response.total = Number(response.num1) / response.num2
+        response.total = response.num1 / response.num2
         break;
 
     }

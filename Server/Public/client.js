@@ -6,7 +6,7 @@ function ready() {
     $("#minusBtn").on('click', minusBtn)
     $("#multiplyBtn").on(`click`, multiplyBtn)
     $("#divisionBtn").on(`click`, divisionBtn)
-    // $("#clearBtn").on(`click`, clearInput)
+    $("#clearBtn").on(`click`, clearInput)
 }
 
 function plusBtn() {
@@ -39,7 +39,7 @@ function sendInput() {
         console.log('successfully posted', response)
         //call back the GET associated with this POST
         receivedInput();
-        clearInput();
+        
     }).catch(function () {
         alert('post failed', response);
     })
@@ -51,7 +51,15 @@ function receivedInput() {
         url: '/calculation'
     }).then(function (response) {
         console.log('success', response)
-        $("#container").html(response)
+        for (let values of response){
+        $("#container").html(`<span>${values.total}</span>`)
+        }
+        $("#historyContainer").empty();
+        for (let i=0; i<response.length; i++){
+            $("#historyContainer").append(`
+            <li> ${response[i].num1} ${response[i].operator} ${response[i].num2} = ${response[i].total}</li>
+        `)
+        }
     }).catch(function () {
         alert('Failed', response)
     })
